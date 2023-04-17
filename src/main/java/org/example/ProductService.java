@@ -6,6 +6,11 @@ public class ProductService  extends CategoryService{
     Scanner Input1=new Scanner(System.in);
     ArrayList<Product>productList=new ArrayList<Product>();
     int product_counter=1;
+
+    public ProductService() {
+        super();
+    }
+
     public void addProduct(Seller seller){
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your product name");
@@ -14,6 +19,7 @@ public class ProductService  extends CategoryService{
         int newPrice = input.nextInt();
         System.out.println("Enter your product quantity");
         int newQuantity = input.nextInt();
+        input.nextLine();
         Product product = new Product(newProductName, newPrice, newQuantity);
         productList.add(product);
         product.setProduct_number(product_counter);
@@ -27,12 +33,11 @@ public class ProductService  extends CategoryService{
     public void setSubCategory2(Product product) {
         System.out.println("please chose your product subcategory:");
         SubCategory subCategory=null;
-        for (SubCategory subCategory1:subCategories){
+        for (SubCategory subCategory1:super.subCategories){
             System.out.println(subCategory1.getName());
-            System.out.println("is this your product subCategory?");
-            Input1.nextLine();
+            System.out.println("is this your product subCategory?(yes/no)");
             String choice=Input1.nextLine();
-            Input1.nextLine();
+            //Input1.nextLine();
             if(choice.equals("yes")){
                 subCategory=subCategory1;
                 product.setSubCategory(subCategory1);

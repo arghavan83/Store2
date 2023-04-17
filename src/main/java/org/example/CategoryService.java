@@ -7,6 +7,11 @@ import java.util.stream.Collectors;
 public class CategoryService {
     List<Category> categories = new ArrayList<Category>();
     List<SubCategory> subCategories = new ArrayList<SubCategory>();
+
+    public CategoryService() {
+        initialize();
+    }
+
     public void initialize(){
         var bookCat = new Category("book");
         categories.add( bookCat );

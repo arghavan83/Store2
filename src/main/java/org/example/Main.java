@@ -5,10 +5,11 @@ public class Main {
         System.out.println("Welcome to Application!");
         CategoryService categoryService=new CategoryService();
         categoryService.initialize();
-        categoryService.printAllCategories();
-        //ProductService productService=new ProductService();
-        //Seller seller1=new Seller("1234","nazi","lll","09","ki");
-        //productService.addProduct(seller1);
+        //categoryService.printAllCategories();
+        ProductService productService=new ProductService();
+        Seller seller1=new Seller("1234","nazi","lll","09","ki");
+        //categoryService.printAllCategories();
+        productService.addProduct(seller1);
         //OptionMenu optionMenu=new OptionMenu();
         //optionMenu.WelcomeMenu();
         // UserService userServic=new UserService();
